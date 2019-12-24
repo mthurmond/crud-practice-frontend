@@ -36,7 +36,6 @@ class DataTable extends Component {
           <td>{item.email}</td>
           <td>{item.phone}</td>
           <td>{item.location}</td>
-          <td>{item.hobby}</td>
           <td>
             <div style={{width:"110px"}}>
               <ModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
@@ -58,7 +57,6 @@ class DataTable extends Component {
             <th>Email</th>
             <th>Phone</th>
             <th>Location</th>
-            <th>Hobby</th>
             <th>Actions</th>
           </tr>
         </thead>

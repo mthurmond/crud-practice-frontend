@@ -48,18 +48,13 @@ class App extends Component {
   render() {
     return (
       <Container className="App">
-        <Row>
+      <Row>
           <Col>
-            <h1 style={{margin: "20px 0"}}>CRUD Database</h1>
+            <h1 style={{margin: "20px 0"}}>Rate tracking</h1>
           </Col>
-        </Row>
-        <Row>
-          <Col>
-            <DataTable items={this.state.items} updateState={this.updateState} deleteItemFromState={this.deleteItemFromState} />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
+      </Row>
+      <Row style={{margin: "10px 0px 30px 0px"}}>
+          <Col>        
             <CSVLink
               filename={"db.csv"}
               color="primary"
@@ -69,6 +64,11 @@ class App extends Component {
               Download CSV
             </CSVLink>
             <ModalForm buttonLabel="Add Item" addItemToState={this.addItemToState}/>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <DataTable items={this.state.items} updateState={this.updateState} deleteItemFromState={this.deleteItemFromState} />
           </Col>
         </Row>
       </Container>

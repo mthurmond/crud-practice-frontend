@@ -8,8 +8,7 @@ class AddEditForm extends React.Component {
     last: '',
     email: '',
     phone: '',
-    location: '',
-    hobby: ''
+    location: ''
   }
 
   onChange = e => {
@@ -28,8 +27,7 @@ class AddEditForm extends React.Component {
         last: this.state.last,
         email: this.state.email,
         phone: this.state.phone,
-        location: this.state.location,
-        hobby: this.state.hobby
+        location: this.state.location
       })
     })
       .then(response => response.json())
@@ -57,8 +55,7 @@ class AddEditForm extends React.Component {
         last: this.state.last,
         email: this.state.email,
         phone: this.state.phone,
-        location: this.state.location,
-        hobby: this.state.hobby
+        location: this.state.location
       })
     })
       .then(response => response.json())
@@ -77,8 +74,8 @@ class AddEditForm extends React.Component {
   componentDidMount(){
     // if item exists, populate the state with proper data
     if(this.props.item){
-      const { id, first, last, email, phone, location, hobby } = this.props.item
-      this.setState({ id, first, last, email, phone, location, hobby })
+      const { id, first, last, email, phone, location } = this.props.item
+      this.setState({ id, first, last, email, phone, location })
     }
   }
 
@@ -104,10 +101,6 @@ class AddEditForm extends React.Component {
         <FormGroup>
           <Label for="location">Location</Label>
           <Input type="text" name="location" id="location" onChange={this.onChange} value={this.state.location === null ? '' : this.state.location}  placeholder="City, State" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="hobby">Hobby</Label>
-          <Input type="text" name="hobby" id="hobby" onChange={this.onChange} value={this.state.hobby}  />
         </FormGroup>
         <Button>Submit</Button>
       </Form>
